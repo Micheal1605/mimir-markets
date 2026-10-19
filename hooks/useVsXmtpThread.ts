@@ -1,11 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import {
-  ConsentState,
-  type DecodedMessage,
-  type Dm,
-} from "@xmtp/browser-sdk";
+import type { DecodedMessage, Dm } from "@xmtp/browser-sdk";
 import type { XmtpClientInstance } from "@/lib/xmtp/types";
 import {
   classifyXmtpThreadError,
@@ -54,7 +50,7 @@ export type UseVsXmtpThreadResult = {
   isRefreshing: boolean;
   /** Sincroniza lista global + hilo y vuelve a cargar mensajes. */
   refreshThread: () => Promise<void>;
-  /** Reinicia apertura del hilo (p. ej. tras error). */
+  /** Reinicia apertura del hilo (p. ej: tras error). */
   retryOpenThread: () => void;
   clearThreadError: () => void;
 };
@@ -159,6 +155,7 @@ export function useVsXmtpThread({
     setIsRefreshing(true);
     clearThreadError();
     try {
+      const { ConsentState } = await import("@xmtp/browser-sdk");
       await c.conversations.syncAll([ConsentState.Allowed]);
       await d.sync();
       const next = await loadThreadMessages(d);
