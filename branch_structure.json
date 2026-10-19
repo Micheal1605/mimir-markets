@@ -1,0 +1,21 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "fix/issue-375-refactor-contracts-remove-repeated-verdict",
+    "fix/issue-494-perf-ui-lazy-load-the-xmtp-sdk-instead-of",
+    "main",
+    "origin"
+  ],
+  "parent": {
+    "fix/issue-375-refactor-contracts-remove-repeated-verdict": "main",
+    "fix/issue-494-perf-ui-lazy-load-the-xmtp-sdk-instead-of": "main",
+    "main": null,
+    "origin": "main"
+  },
+  "order": [
+    "main",
+    "fix/issue-375-refactor-contracts-remove-repeated-verdict",
+    "fix/issue-494-perf-ui-lazy-load-the-xmtp-sdk-instead-of",
+    "origin"
+  ]
+}
